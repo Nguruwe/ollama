@@ -25,8 +25,8 @@ services:
       - "11434:11434"
     healthcheck:
       test: ollama --version || exit 1
-    entrypoint: /root/entrypoint.sh
+    entrypoint: /usr/local/sbin/entrypoint.sh
     volumes:
       - ./data:/root/.ollama
-      - ./entrypoint.sh:/root/entrypoint.sh
+      - ./entrypoint.sh:/usr/local/sbin/entrypoint.sh
     restart: always
